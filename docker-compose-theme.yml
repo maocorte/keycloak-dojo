@@ -13,11 +13,10 @@ services:
       - security
 
   keycloak:
-    image: keycloak:4.1.0.Custom
+    image: keycloak:4.1.0.Final.CustomTheme
     restart: always
     ports:
       - 8080:8080
-      - 9990:9990
     environment:
       KEYCLOAK_USER: ${KC_USER-admin}
       KEYCLOAK_PASSWORD: ${KC_PWD-admin}
@@ -27,8 +26,6 @@ services:
       DB_DATABASE: ${DB_NAME-keycloak}
       DB_USER: ${DB_USER-keycloak}
       DB_PASSWORD: ${DB_PWD-keycloak}
-#    volumes:
-#      - ./themes:/opt/jboss/keycloak/themes
     links:
       - db
     networks:

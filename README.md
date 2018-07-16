@@ -16,6 +16,17 @@ To run an example who already has some custom themes into the running container,
 
 ```bash
 $ ./download-themes.sh
-$ docker build . -t keycloak:4.1.0.Custom
-$ docker-compose -f docker-compose-custom.yml up -d
+$ docker build -f Dockerfile.theme -t keycloak:4.1.0.Final.CustomTheme .
+$ docker-compose -f docker-compose-theme.yml up -d
 ```
+
+## Run behind a proxy
+
+To run an example who use Keycloak under an Nginx proxy run:
+
+```bash
+$ docker build -f Dockerfile.proxy -t keycloak:4.1.0.Final.Proxy .
+$ docker-compose -f docker-compose-proxy.yml up -d
+```
+
+Once the containers are up & running, open `http://localhost/keycloak/auth` to use Keycloak.
