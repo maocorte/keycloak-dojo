@@ -16,6 +16,6 @@ To run an example who already has some custom themes into the running container,
 
 ```bash
 $ ./download-themes.sh
-$ docker build . -t keycloak::4.1.0.Custom
+$ docker build . -t keycloak:4.1.0.Custom
 $ docker-compose -f docker-compose-custom.yml up -d
 ```
